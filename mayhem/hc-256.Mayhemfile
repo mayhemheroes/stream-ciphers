@@ -1,0 +1,10 @@
+project: stream-ciphers
+target: hc-256
+
+# image: ghcr.io/nottirb/stream-ciphers:latest
+
+cmds:
+    - cmd: /hc-256
+
+testsuite:
+    - file://mayhem/testsuite/hc-256

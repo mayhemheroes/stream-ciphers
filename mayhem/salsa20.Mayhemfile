@@ -1,0 +1,10 @@
+project: stream-ciphers
+target: salsa20
+
+# image: ghcr.io/nottirb/stream-ciphers:latest
+
+cmds:
+    - cmd: /salsa20
+
+testsuite:
+    - file://mayhem/testsuite/salsa20
