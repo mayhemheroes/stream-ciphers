@@ -1,0 +1,39 @@
+[package]
+name = "stream-ciphers-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+honggfuzz = "0.5.55"
+cipher = "0.4.4"
+rand = "0.8.5"
+
+[dependencies.rabbit]
+path = "../rabbit"
+
+[dependencies.hc-256]
+path = "../hc-256"
+
+[dependencies.salsa20]
+path = "../salsa20"
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "rabbit"
+path = "fuzz_targets/rabbit.rs"
+
+[[bin]]
+name = "hc-256"
+path = "fuzz_targets/hc-256.rs"
+
+[[bin]]
+name = "salsa20"
+path = "fuzz_targets/salsa20.rs"
