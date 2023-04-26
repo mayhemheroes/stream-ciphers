@@ -5,6 +5,3 @@ target: salsa20
 
 cmds:
     - cmd: /salsa20
-
-testsuite:
-    - file://mayhem/testsuite/salsa20
