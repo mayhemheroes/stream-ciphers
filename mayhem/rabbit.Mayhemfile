@@ -1,8 +1,6 @@
 project: stream-ciphers
 target: rabbit
 
-# image: ghcr.io/nottirb/stream-ciphers:latest
-
 cmds:
     - cmd: /rabbit
 
