@@ -2,7 +2,7 @@ use honggfuzz::fuzz;
 use rabbit::{Rabbit, RabbitKeyOnly};
 use cipher::{KeyInit, KeyIvInit, StreamCipher};
 use rand::{Rng, SeedableRng};
-use rand::rngs::StdRng;
+use rand_pcg::Pcg64;
 
 fn main() {
     loop {
@@ -16,7 +16,7 @@ fn main() {
             for (dst, src) in seed.iter_mut().zip(data.iter()) {
                 *dst = *src;
             }
-            let mut rng = StdRng::from_seed(seed);
+            let mut rng = Pcg64::from_seed(seed);
 
             // Create a key/iv
             let key = &data[0..16];
