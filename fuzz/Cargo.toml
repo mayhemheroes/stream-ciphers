@@ -12,6 +12,7 @@ cargo-fuzz = true
 honggfuzz = "0.5.55"
 cipher = "0.4.4"
 rand = "0.8.5"
+rand_pcg = "0.3.1"
 
 [dependencies.rabbit]
 path = "../rabbit"
