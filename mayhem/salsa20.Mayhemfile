@@ -1,0 +1,5 @@
+project: stream-ciphers
+target: salsa20
+
+cmds:
+    - cmd: /salsa20
