@@ -1,0 +1,8 @@
+project: stream-ciphers
+target: rabbit
+
+cmds:
+    - cmd: /rabbit
+
+testsuite:
+    - file://mayhem/testsuite/rabbit

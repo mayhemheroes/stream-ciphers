@@ -1,0 +1,8 @@
+project: stream-ciphers
+target: hc-256
+
+cmds:
+    - cmd: /hc-256
+
+testsuite:
+    - file://mayhem/testsuite/hc-256
