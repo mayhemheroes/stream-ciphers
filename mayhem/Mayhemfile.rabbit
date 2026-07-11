@@ -1,0 +1,14 @@
+project: stream-ciphers
+target: rabbit
+
+# libFuzzer harness (libfuzzer-sys). Built by mayhem/build.sh to /mayhem/bin/rabbit
+# (/mayhem/rabbit is the upstream crate dir, so the binary goes under /mayhem/bin/).
+
+cmds:
+    - cmd: /mayhem/bin/rabbit
+      env:
+        TMPDIR: /tmp
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/rabbit/testsuite

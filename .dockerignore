@@ -1,0 +1,24 @@
+# .dockerignore for the commit-image build.
+# Goal: bake in the FULL repo (including .git history — the grader uses it),
+# dropping only local build artifacts and editor/OS cruft. Dev image, not minimal.
+# Lands at the fork root (the build context) when the template is copied in.
+
+# ── Build outputs / local cruft ──────────────────────────────────────────────
+# Cargo build trees (host artifacts). build.sh regenerates everything under
+# /mayhem at build time, so never ship a host-built target/ into the image.
+target/
+**/target/
+mayhem/fuzz/target/
+mayhem/test-target/
+build/
+out/
+*.o
+*.a
+*.so
+*.dylib
+**/__pycache__/
+
+# ── Editor / OS noise ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*~

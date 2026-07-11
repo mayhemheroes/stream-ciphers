@@ -1,0 +1,9 @@
+project: stream-ciphers
+target: salsa20
+
+# libFuzzer harness (libfuzzer-sys). Built by mayhem/build.sh to /mayhem/bin/salsa20
+# (/mayhem/salsa20 is the upstream crate dir, so the binary goes under /mayhem/bin/).
+cmds:
+    - cmd: /mayhem/bin/salsa20
+      env:
+        TMPDIR: /tmp

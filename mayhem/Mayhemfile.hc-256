@@ -1,0 +1,14 @@
+project: stream-ciphers
+target: hc-256
+
+# libFuzzer harness (libfuzzer-sys). Built by mayhem/build.sh to /mayhem/bin/hc-256
+# (/mayhem/hc-256 is the upstream crate dir, so the binary goes under /mayhem/bin/).
+
+cmds:
+    - cmd: /mayhem/bin/hc-256
+      env:
+        TMPDIR: /tmp
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/hc-256/testsuite
